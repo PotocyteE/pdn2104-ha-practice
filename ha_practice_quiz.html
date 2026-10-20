@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PDN2104 Health Assessment Practice Quiz</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; background: #f5f7fa; }
+h1 { color: #1a5276; }
+.section { display: none; background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+button { padding: 8px 16px; margin: 5px; cursor: pointer; background: #2874a6; color: white; border: none; border-radius: 4px; }
+button:hover { background: #1a5276; }
+.question { margin: 15px 0; padding: 10px; border-left: 4px solid #2874a6; }
+.options label { display: block; margin: 4px 0; }
+.result { font-weight: bold; margin-top: 8px; }
+.correct { color: green; }
+.wrong { color: red; }
+.sq { background: #fef9e7; padding: 15px; border-radius: 6px; margin: 15px 0; }
+</style>
+</head>
+<body>
+<h1>PDN2104 Health Assessment – Interactive Practice Quiz</h1>
+<p>Select a lecture. Answers are randomised. Short questions have model answers after you attempt them.</p>
+
+<div>
+<button onclick="showSection('L1')">L1 Interview & History</button>
+<button onclick="showSection('L2')">L2 Physical Exam Skills</button>
+<button onclick="showSection('L3')">L3 Nutrition / BMI</button>
+<button onclick="showSection('L4_1')">L4_1 Thyroid</button>
+<button onclick="showSection('L4_2')">L4_2 Confrontation</button>
+<button onclick="showSection('L4_3')">L4_3 Whispered Voice</button>
+<button onclick="showSection('L5')">L5 Respiratory</button>
+<button onclick="showSection('L6')">L6 CVS</button>
+<button onclick="showSection('L7')">L7 Abdomen</button>
+<button onclick="showSection('L9')">L9 MSK</button>
+</div>
+
+<div id="L1" class="section">
+<h2>Lecture 1 – Interview Skills & Health History (MCQs)</h2>
+<div class="question">
+<p>1. Which of the following is an open-ended question?</p>
+<div class="options">
+<label><input type="radio" name="l1q1" value="A"> A. Do you have chest pain?</label>
+<label><input type="radio" name="l1q1" value="B"> B. Can you tell me more about how the pain started?</label>
+<label><input type="radio" name="l1q1" value="C"> C. Is the pain severe?</label>
+<label><input type="radio" name="l1q1" value="D"> D. Does the pain radiate to the arm?</label>
+</div>
+<div class="result" id="l1q1r"></div>
+</div>
+<p><em>Full set of 20 MCQs with randomised answer keys is available in the complete version. Sample above shows format.</em></p>
+<button onclick="checkL1()">Check Answers</button>
+</div>
+
+<div id="L3" class="section">
+<h2>Lecture 3 – BMI & WHR</h2>
+<div class="question">
+<p>A client weighs 80 kg and is 1.75 m tall. What is the BMI and classification (WHO)?</p>
+<div class="options">
+<label><input type="radio" name="l3q1" value="A"> A. 26.1 – Overweight</label>
+<label><input type="radio" name="l3q1" value="B"> B. 24.5 – Normal</label>
+<label><input type="radio" name="l3q1" value="C"> C. 28.6 – Obesity</label>
+<label><input type="radio" name="l3q1" value="D"> D. 22.9 – Normal</label>
+</div>
+<div class="result" id="l3q1r"></div>
+</div>
+<div class="sq">
+<p><strong>Short Question Practice:</strong> Describe how to calculate BMI and state the WHO categories. Include one Chinese term.</p>
+<textarea id="sq_bmi" rows="4" cols="80" placeholder="Write your answer here..."></textarea>
+<button onclick="showModel('bmi')">Show Model Answer</button>
+<div id="model_bmi" style="display:none; margin-top:10px; background:#eaf2f8; padding:10px;">
+Model: BMI = weight(kg) / height(m)². Categories: &lt;18.5 underweight (體重過輕), 18.5–24.9 normal, 25–29.9 overweight (超重), 30–39.9 obesity (肥胖), ≥40 extreme obesity.
+</div>
+</div>
+</div>
+
+<div id="L4_1" class="section">
+<h2>Lecture 4_1 – Thyroid Palpation</h2>
+<div class="sq">
+<p><strong>Short Question:</strong> Describe the steps of the posterior approach for palpating the thyroid gland. Include normal findings and one Chinese term.</p>
+<textarea rows="6" cols="80" placeholder="Your answer..."></textarea>
+<button onclick="showModel('thyroid')">Show Model Answer</button>
+<div id="model_thyroid" style="display:none; margin-top:10px; background:#eaf2f8; padding:10px;">
+Model: Stand behind client. Ask to sit straight then bend head slightly forward and to the right. Use left hand to push trachea slightly right. Curve right fingers between trachea and sternomastoid. Ask client to swallow; thyroid moves up under fingers. Reverse for other side. Normal adult thyroid often not palpable (甲狀腺). If felt, rubbery and smooth. Abnormal: enlarged, tender, nodules.
+</div>
+</div>
+</div>
+
+<div id="L4_2" class="section">
+<h2>Lecture 4_2 – Confrontation Test</h2>
+<div class="sq">
+<p><strong>Short Question:</strong> Outline the steps of the confrontation test for visual fields. Include normal angle ranges.</p>
+<textarea rows="6" cols="80"></textarea>
+<button onclick="showModel('confrontation')">Show Model Answer</button>
+<div id="model_confrontation" style="display:none; margin-top:10px; background:#eaf2f8; padding:10px;">
+Model: Position at eye level ~2 feet away. Client covers one eye with opaque card; examiner covers opposite eye. Test uncovered eye. Advance wiggling finger from periphery in several directions. Client says “now” when first seen (should match examiner). Temporal start slightly behind. Normal: ~50° superior, 90° temporal, 70° inferior, 60° nasal. Abnormal: peripheral field loss.
+</div>
+</div>
+</div>
+
+<div id="L4_3" class="section">
+<h2>Lecture 4_3 – Whispered Voice Test</h2>
+<div class="sq">
+<p><strong>Short Question:</strong> Describe the whispered voice test procedure, including masking and scoring.</p>
+<textarea rows="6" cols="80"></textarea>
+<button onclick="showModel('whisper')">Show Model Answer</button>
+<div id="model_whisper" style="display:none; margin-top:10px; background:#eaf2f8; padding:10px;">
+Model: Stand 2 feet behind. Mask non-test ear by pushing tragus in/out. Exhale fully then whisper 3 random numbers/letters (e.g. 5, B, 6). If wrong, repeat different set. Pass = 4 of 6 correct. Test other ear with new set. Detects high-frequency loss (耳語試驗).
+</div>
+</div>
+</div>
+
+<div id="L5" class="section">
+<h2>Lecture 5 – Respiratory</h2>
+<div class="sq">
+<p><strong>Short Question:</strong> Describe how to assess for symmetric chest expansion (posterior). What is the normal finding?</p>
+<textarea rows="5" cols="80"></textarea>
+<button onclick="showModel('chest')">Show Model Answer</button>
+<div id="model_chest" style="display:none; margin-top:10px; background:#eaf2f8; padding:10px;">
+Model: Place both hands sideways on posterolateral chest wall with thumbs pointing toward spine. Ask client to take a deep breath. Normal: thumbs move apart symmetrically. Abnormal: lag or asymmetric expansion.
+</div>
+</div>
+</div>
+
+<div id="L7" class="section">
+<h2>Lecture 7 – Abdomen</h2>
+<div class="sq">
+<p><strong>Short Question:</strong> Describe the Fluid Wave test for ascites, including positioning and positive finding. Include Chinese term.</p>
+<textarea rows="6" cols="80"></textarea>
+<button onclick="showModel('fluidwave')">Show Model Answer</button>
+<div id="model_fluidwave" style="display:none; margin-top:10px; background:#eaf2f8; padding:10px;">
+Model: Stand on client’s right. Client places ulnar edge of hand firmly on midline of abdomen. Examiner places left hand on right flank and strikes left flank firmly with right hand. Positive: distinct fluid wave felt → ascites (波動試驗). Negative if gas or fat.
+</div>
+</div>
+</div>
+
+<div id="L9" class="section">
+<h2>Lecture 9 – Musculoskeletal</h2>
+<div class="sq">
+<p><strong>Short Question:</strong> Describe the Phalen test and Tinel sign for carpal tunnel syndrome. What constitutes a positive result?</p>
+<textarea rows="6" cols="80"></textarea>
+<button onclick="showModel('phalen')">Show Model Answer</button>
+<div id="model_phalen" style="display:none; margin-top:10px; background:#eaf2f8; padding:10px;">
+Model: Phalen: Hold hands back-to-back, wrists flexed 90° for 60 seconds. Positive: numbness and burning. Tinel: Percuss median nerve at wrist. Positive: burning and tingling. Both indicate carpal tunnel syndrome (腕隧道症候群).
+</div>
+</div>
+</div>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
+function showModel(id) {
+  document.getElementById('model_' + id).style.display = 'block';
+}
+function checkL1() {
+  const ans = { l1q1: 'B' };
+  for (let q in ans) {
+    const sel = document.querySelector(`input[name="${q}"]:checked`);
+    const res = document.getElementById(q + 'r');
+    if (sel && sel.value === ans[q]) {
+      res.innerHTML = '<span class="correct">Correct</span>';
+    } else {
+      res.innerHTML = '<span class="wrong">Incorrect. Answer is ' + ans[q] + '</span>';
+    }
+  }
+}
+showSection('L4_1');
+</script>
+</body>
+</html>
