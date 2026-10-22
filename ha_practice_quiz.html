@@ -3,11 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>PDN2104 HA Practice</title>
-<style>body{font-family:Arial;margin:20px;background:#f5f7fa}h1{color:#1a5276}.section{display:none;background:white;padding:20px;margin:10px;border-radius:8px}.sq{background:#fef9e7;padding:15px;margin:15px 0}</style>
+<style>
+body{font-family:Arial,sans-serif;margin:20px;background:#f5f7fa;color:#2c3e50}
+h1{color:#1a5276}
+.section{display:none;background:white;padding:20px;margin:10px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+.sq{background:#fef9e7;padding:15px;margin:15px 0;border-radius:6px}
+button{padding:8px 14px;margin:4px;background:#2874a6;color:white;border:none;border-radius:4px;cursor:pointer}
+button:hover{background:#1a5276}
+textarea{width:100%;margin-top:8px;font-family:inherit}
+.model{display:none;margin-top:12px;background:#eaf2f8;padding:12px;border-radius:6px}
+</style>
 </head>
 <body>
 <h1>PDN2104 Health Assessment Practice</h1>
-<p>Use the buttons to switch lectures. Attempt the short questions first, then reveal model answers. MCQs have varied correct options.</p>
+<p>Attempt the short questions first, then click Model Answer.</p>
+
 <button onclick="show('L3')">L3 BMI</button>
 <button onclick="show('L4_1')">L4_1 Thyroid</button>
 <button onclick="show('L4_2')">L4_2 Confrontation</button>
@@ -16,50 +26,95 @@
 <button onclick="show('L6')">L6 CVS</button>
 <button onclick="show('L7')">L7 Abdomen</button>
 <button onclick="show('L9')">L9 MSK</button>
+<button onclick="show('GCS')">GCS (Neuro)</button>
 
 <div id="L3" class="section">
 <h2>L3 Nutrition / BMI / WHR</h2>
-<div class="sq"><p><strong>SQ:</strong> Calculate BMI for 80 kg / 1.75 m and give WHO category + Chinese term.</p><textarea rows="4"></textarea><button onclick="document.getElementById('m3').style.display='block'">Model</button><div id="m3" style="display:none;background:#eaf2f8;padding:10px">BMI ≈ 26.1 = Overweight (超重). <18.5 體重過輕, 18.5–24.9 normal, 25–29.9 超重, ≥30 肥胖.</div></div>
+<div class="sq"><p><strong>SQ:</strong> Calculate BMI for 80 kg / 1.75 m and give WHO category + Chinese term.</p>
+<textarea rows="4"></textarea>
+<button onclick="document.getElementById('m3').style.display='block'">Model Answer</button>
+<div id="m3" class="model">BMI ≈ 26.1 = Overweight (超重). <18.5 體重過輕, 18.5–24.9 normal, 25–29.9 超重, ≥30 肥胖.</div></div>
 </div>
 
 <div id="L4_1" class="section">
 <h2>L4_1 Thyroid Palpation</h2>
-<div class="sq"><p><strong>SQ:</strong> Posterior approach steps + normal findings + Chinese term.</p><textarea rows="6"></textarea><button onclick="document.getElementById('m41').style.display='block'">Model</button><div id="m41" style="display:none;background:#eaf2f8;padding:10px">Stand behind. Head forward & right. Left hand pushes trachea right. Right fingers between trachea & SCM. Swallow – feel movement. Reverse. Normal often not palpable (甲狀腺). If felt: rubbery smooth. Abnormal: enlarged/nodules/bruit.</div></div>
+<div class="sq"><p><strong>SQ:</strong> Posterior approach steps + normal findings + Chinese term.</p>
+<textarea rows="6"></textarea>
+<button onclick="document.getElementById('m41').style.display='block'">Model Answer</button>
+<div id="m41" class="model">Stand behind. Head forward & right. Left hand pushes trachea right. Right fingers between trachea & SCM. Swallow – feel movement. Reverse. Normal often not palpable (甲狀腺). If felt: rubbery smooth. Abnormal: enlarged/nodules/bruit.</div></div>
 </div>
 
 <div id="L4_2" class="section">
 <h2>L4_2 Confrontation Test</h2>
-<div class="sq"><p><strong>SQ:</strong> Steps + normal angles.</p><textarea rows="6"></textarea><button onclick="document.getElementById('m42').style.display='block'">Model</button><div id="m42" style="display:none;background:#eaf2f8;padding:10px">Eye level 2 ft. Cover opposite eyes. Wiggling finger from periphery. Client says “now” when seen (match examiner). Temporal start behind. Angles: sup 50°, temp 90°, inf 70°, nasal 60°. Abnormal = peripheral loss (青光眼).</div></div>
+<div class="sq"><p><strong>SQ:</strong> Steps + normal angles.</p>
+<textarea rows="6"></textarea>
+<button onclick="document.getElementById('m42').style.display='block'">Model Answer</button>
+<div id="m42" class="model">Eye level 2 ft. Cover opposite eyes. Wiggling finger from periphery. Client says “now” when seen (match examiner). Temporal start behind. Angles: sup 50°, temp 90°, inf 70°, nasal 60°. Abnormal = peripheral loss (青光眼).</div></div>
 </div>
 
 <div id="L4_3" class="section">
 <h2>L4_3 Whispered Voice</h2>
-<div class="sq"><p><strong>SQ:</strong> Procedure, masking, scoring + Chinese.</p><textarea rows="6"></textarea><button onclick="document.getElementById('m43').style.display='block'">Model</button><div id="m43" style="display:none;background:#eaf2f8;padding:10px">2 ft behind. Mask by pushing tragus. Exhale, whisper 3 numbers/letters. If wrong, different set. Pass 4/6. Other ear new set. High-frequency loss (耳語試驗).</div></div>
+<div class="sq"><p><strong>SQ:</strong> Procedure, masking, scoring + Chinese.</p>
+<textarea rows="6"></textarea>
+<button onclick="document.getElementById('m43').style.display='block'">Model Answer</button>
+<div id="m43" class="model">2 ft behind. Mask by pushing tragus. Exhale, whisper 3 numbers/letters. If wrong, different set. Pass 4/6. Other ear new set. High-frequency loss (耳語試驗).</div></div>
 </div>
 
 <div id="L5" class="section">
 <h2>L5 Respiratory</h2>
-<div class="sq"><p><strong>SQ:</strong> Symmetric chest expansion (posterior) + tactile fremitus normal vs abnormal.</p><textarea rows="5"></textarea><button onclick="document.getElementById('m5').style.display='block'">Model</button><div id="m5" style="display:none;background:#eaf2f8;padding:10px">Hands posterolateral, thumbs T9–T10 to spine. Deep breath – thumbs move apart symmetrically. Fremitus: “ninety-nine” with ulnar edge. Symmetric normal. ↑ consolidation, ↓ emphysema/effusion.</div></div>
+<div class="sq"><p><strong>SQ:</strong> Symmetric chest expansion (posterior) + tactile fremitus normal vs abnormal.</p>
+<textarea rows="5"></textarea>
+<button onclick="document.getElementById('m5').style.display='block'">Model Answer</button>
+<div id="m5" class="model">Hands posterolateral, thumbs T9–T10 to spine. Deep breath – thumbs move apart symmetrically. Fremitus: “ninety-nine” with ulnar edge. Symmetric normal. ↑ consolidation, ↓ emphysema/effusion.</div></div>
 </div>
 
 <div id="L6" class="section">
 <h2>L6 CVS</h2>
-<div class="sq"><p><strong>SQs:</strong> PQRST questions for chest pain; steps to measure JVP + normal; abdominojugular test positive finding.</p><textarea rows="8"></textarea><button onclick="document.getElementById('m6').style.display='block'">Model</button><div id="m6" style="display:none;background:#eaf2f8;padding:10px">PQRST: Provoking, Quality, Region/radiation, Severity 0–10, Timing. JVP: 30–45°, from sternal angle, normal <3 cm. Abdominojugular: RUQ pressure 30–60s → sustained JVP rise = right heart failure. Carotid: one side at a time, gentle.</div></div>
+<div class="sq"><p><strong>SQs:</strong> PQRST questions for chest pain; steps to measure JVP + normal; abdominojugular test positive finding.</p>
+<textarea rows="8"></textarea>
+<button onclick="document.getElementById('m6').style.display='block'">Model Answer</button>
+<div id="m6" class="model">PQRST: Provoking, Quality, Region/radiation, Severity 0–10, Timing. JVP: 30–45°, from sternal angle, normal <3 cm. Abdominojugular: RUQ pressure 30–60s → sustained JVP rise = right heart failure. Carotid: one side at a time, gentle.</div></div>
 </div>
 
 <div id="L7" class="section">
 <h2>L7 Abdomen</h2>
-<div class="sq"><p><strong>SQs:</strong> Fluid Wave, Murphy’s, Rebound, Cullen’s + Chinese terms & positive findings.</p><textarea rows="8"></textarea><button onclick="document.getElementById('m7').style.display='block'">Model</button><div id="m7" style="display:none;background:#eaf2f8;padding:10px">Fluid Wave (波動試驗): midline hand, strike left flank, feel wave = ascites. Murphy’s (墨菲氏徵): inspiratory arrest under right costal margin = cholecystitis. Rebound (反跳痛): pain on release = peritonitis. Cullen’s: bluish umbilicus = bleeding.</div></div>
+<div class="sq"><p><strong>SQs:</strong> Fluid Wave, Murphy’s, Rebound, Cullen’s + Chinese terms & positive findings.</p>
+<textarea rows="8"></textarea>
+<button onclick="document.getElementById('m7').style.display='block'">Model Answer</button>
+<div id="m7" class="model">Fluid Wave (波動試驗): midline hand, strike left flank, feel wave = ascites. Murphy’s (墨菲氏徵): inspiratory arrest under right costal margin = cholecystitis. Rebound (反跳痛): pain on release = peritonitis. Cullen’s: bluish umbilicus = bleeding.</div></div>
 </div>
 
 <div id="L9" class="section">
 <h2>L9 MSK</h2>
-<div class="sq"><p><strong>SQs:</strong> Phalen, Tinel, Bulge, Ballottement, SLR + positive findings & Chinese.</p><textarea rows="8"></textarea><button onclick="document.getElementById('m9').style.display='block'">Model</button><div id="m9" style="display:none;background:#eaf2f8;padding:10px">Phalen (法倫試驗): 90° flexed 60s → numbness = CTS. Tinel: percuss wrist → tingling. Bulge: fluid wave after stroking = small effusion. Ballottement: patella floats = larger effusion. SLR 30–70° radiating pain = sciatica.</div></div>
+<div class="sq"><p><strong>SQs:</strong> Phalen, Tinel, Bulge, Ballottement, SLR + positive findings & Chinese.</p>
+<textarea rows="8"></textarea>
+<button onclick="document.getElementById('m9').style.display='block'">Model Answer</button>
+<div id="m9" class="model">Phalen (法倫試驗): 90° flexed 60s → numbness = CTS. Tinel: percuss wrist → tingling. Bulge: fluid wave after stroking = small effusion. Ballottement: patella floats = larger effusion. SLR 30–70° radiating pain = sciatica.</div></div>
+</div>
+
+<div id="GCS" class="section">
+<h2>Glasgow Coma Scale (GCS) – Short Question</h2>
+<div class="sq">
+<p><strong>Mr. Chan, 58 years old, is admitted after a road traffic accident. He is drowsy. You are asked to perform a Glasgow Coma Scale (GCS) assessment.</strong></p>
+<p><strong>(a)</strong> Describe the three components of the GCS and the maximum score for each component.</p>
+<p><strong>(b)</strong> Outline the steps you would take to assess each component (include the order of stimulation if the client does not respond spontaneously).</p>
+<p><strong>(c)</strong> Mr. Chan opens his eyes only to pain, makes incomprehensible sounds, and withdraws to pain (normal flexion). Calculate his total GCS score and interpret the clinical significance.</p>
+<textarea rows="10" placeholder="Write your answer here..."></textarea>
+<button onclick="document.getElementById('mgcs').style.display='block'">Model Answer</button>
+<div id="mgcs" class="model">
+<strong>(a)</strong> Eye opening (E) max 4; Verbal response (V) max 5; Motor response (M) max 6. Total possible = 15.<br><br>
+<strong>(b)</strong> 1. Check for interfering factors (intubation, facial injury, sedation). 2. Observe spontaneous behaviour first. 3. If no response: speak/call name; if still none → physical stimulus in order (fingertip pressure → trapezius squeeze → supraorbital pressure). 4. Score the best response for each component. 5. Document as E_V_M = total.<br><br>
+<strong>(c)</strong> E2 + V2 + M4 = GCS 8. Score ≤ 8 indicates severe impairment of consciousness / possible need for airway protection. (Normal = 15; mild 13–15, moderate 9–12, severe ≤ 8)
+</div>
+</div>
 </div>
 
 <script>
-function show(id){document.querySelectorAll('.section').forEach(s=>s.style.display='none');document.getElementById(id).style.display='block';}
-show('L4_1');
+function show(id){
+  document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+show('GCS');
 </script>
 </body>
 </html>
